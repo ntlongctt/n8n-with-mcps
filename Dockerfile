@@ -13,6 +13,9 @@ RUN chmod +x /usr/local/bin/uv
 # Create symlink for uvx
 RUN ln -s /usr/local/bin/uv /usr/local/bin/uvx
 
+# Debug: Check uv version and path
+RUN uv --version && which uvx
+
 # Install mcp-atlassian globally
 RUN uvx install mcp-atlassian
 
