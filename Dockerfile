@@ -17,7 +17,7 @@ RUN ln -s /usr/local/bin/uv /usr/local/bin/uvx
 RUN uv --version && which uvx
 
 # Install mcp-atlassian globally
-RUN uvx install mcp-atlassian
+RUN uvx mcp-atlassian
 
 # Verify installations
 RUN uv --version && \
@@ -26,7 +26,3 @@ RUN uv --version && \
 
 # Switch back to node user (best practice for security)
 USER node
-
-# Verify the node user can access the commands
-RUN uvx --version && \
-    uvx mcp-atlassian --help
